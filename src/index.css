@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap");
+@import "tailwindcss";
+
+
+@tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base{
+  img{
+    @apply w-[50%] h-[50%] lg:w-[75%] lg:h-[75%] xl:w-[100%] xl:h-[100%]
+  }
+}
+
+@layer utilities{
+  .flex-center{
+    @apply flex justify-center items-center;
+  }
+  .my-border{
+    @apply border-black dark:border-dark
+  }
+}
+
+@layer components{
+    .darkmodebtn{
+      @apply border-2 px-5 py-3 border-black dark:border-dark cursor-pointer
+    }
+    .head-btn{
+      @apply px-5 py-3 border-2 bg-white dark:bg-black border-black dark:border-dark rounded-3xl hover:scale-110 hover:translate-y-3 hover:underline duration-500
+    }
+    .card{
+      @apply bg-white dark:bg-black @max-xs:w-[100%] lg:w-[calc((100%/3)-20px)] xl:w-[calc(25%-20px)] flex flex-col h-[500px] border-2 border-black dark:border-dark overflow-y-hidden p-[30px] space-y-10 lg:space-y-5 xl:space-y-3 dark:hover:brightness-150 hover:brightness-75 cursor-pointer hover:scale-90 duration-500
+    }
+    .select-options{
+      @apply absolute bottom-[30px] left-0 w-[150px] bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-lg z-10
+    }
+    .watching-option{
+      @apply p-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 text-sm
+    }
+    .liked-movie-card{
+      @apply flex w-full h-[150px] bg-white dark:bg-black my-4 rounded-lg overflow-hidden hover:brightness-90 dark:hover:brightness-125 hover:scale-90 duration-500
+    }
+    .watching-list-options{
+      @apply cursor-pointer border-black dark:border-dark border-2 rounded-xl px-5 py-2
+    }
+    .opinion-card{
+      @apply min-w-[300px] max-w-[320px] bg-gray-100 mt-10 dark:bg-gray-800 border border-black dark:border-dark rounded-xl p-6 shadow-md flex-shrink-0 hover:bg-gray-300 dark:hover:bg-gray-700 hover:scale-95 duration-500 cursor-pointer
+    }
+    .InputOpinions{
+      @apply px-4 py-2 rounded-lg border border-black dark:border-dark bg-white dark:bg-black focus:outline-none focus:ring-2 focus:ring-orange-400
+    }
+}
+
+.opinions-marquee {
+  display: flex;
+  width: max-content;
+  animation: opinions-marquee-scroll 35s linear infinite;
+}
+
+@keyframes opinions-marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@theme{
+  --font-bungee : "Bungee Outline" , cursive;
+  --color-light : #1b1b1b ;
+  --bg-black : #1b1b1b ;
+  --color-dark : #ffa31a ;
+}
+
+html,body{
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
