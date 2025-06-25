@@ -87,7 +87,7 @@ const App = () => {
     : opinions;
 
   return (
-    <div className='text-light dark:text-dark bg-white dark:bg-black'>
+    <div className='text-light dark:text-dark bg-white dark:bg-black selection:bg-gray-500 dark:selection:bg-cyan-900'>
       <ToggleDarkMode/>
       <Routes>
         <Route path='/' element={

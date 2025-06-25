@@ -1,13 +1,13 @@
 {
   "name": "movies-app",
-  "homepage": "https://Mostafa-3bmen3m.github.io/My-First-React-App",
+  "homepage": "https://Mostafa-3bmen3m.github.io/My-First-React-App/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
